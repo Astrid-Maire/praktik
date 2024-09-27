@@ -1,0 +1,40 @@
+@layer reset, global, conponents, overrides;
+
+@import url("./reset.css") layer(reset);
+
+@import url("https://fonts.googleapis.com/css2?family=Romanesco&display=swap");
+
+@layer global {
+  html {
+    font-family: Georgia, sans-serif;
+  }
+
+  h1 {
+    font-family: "Romanesco", cursive;
+  }
+
+  :root {
+    --Primary-01: rgba(242, 234, 213, 1);
+    --Primary-02: rgba(242, 209, 147, 1);
+    --Primary-03: rgba(216, 181, 138, 1);
+    --Primary-04: rgba(191, 163, 147, 1);
+    --Primary-05: rgba(165, 120, 104, 1);
+    --Primary-06: rgba(24, 24, 24, 1);
+    --Primary-07: rgba(54, 132, 45, 1);
+  }
+
+  :root {
+    --step--1: clamp(0.4rem, 0.1295rem + 1.3277vw, 1.1253rem);
+    --step-0: clamp(0.5rem, 0.127rem + 1.8307vw, 1.5rem);
+    --step-1: clamp(0.625rem, 0.1123rem + 2.5162vw, 1.9995rem);
+    --step-2: clamp(0.7813rem, 0.0785rem + 3.4491vw, 2.6653rem);
+    --step-3: clamp(0.9766rem, 0.0156rem + 4.7164vw, 3.5529rem);
+    --step-4: clamp(1.2207rem, -0.0905rem + 6.4353vw, 4.736rem);
+    --step-5: clamp(1.5259rem, -0.2597rem + 8.7638vw, 6.3131rem);
+  }
+
+  :root {
+    --margin-left: 11rem;
+    --fluid: clamp(4.375rem, 1.9039rem + 12.1281vw, 11rem);
+  }
+}
