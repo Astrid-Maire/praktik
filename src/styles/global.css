@@ -9,8 +9,9 @@
     font-family: Georgia, sans-serif;
   }
 
-  h1 {
-    font-family: "Romanesco", cursive;
+  h1,
+  h2 {
+    font-family: "Romanesco", sans-serif;
   }
 
   :root {
@@ -24,17 +25,16 @@
   }
 
   :root {
-    --step--1: clamp(0.4rem, 0.1295rem + 1.3277vw, 1.1253rem);
-    --step-0: clamp(0.5rem, 0.127rem + 1.8307vw, 1.5rem);
-    --step-1: clamp(0.625rem, 0.1123rem + 2.5162vw, 1.9995rem);
-    --step-2: clamp(0.7813rem, 0.0785rem + 3.4491vw, 2.6653rem);
-    --step-3: clamp(0.9766rem, 0.0156rem + 4.7164vw, 3.5529rem);
-    --step-4: clamp(1.2207rem, -0.0905rem + 6.4353vw, 4.736rem);
-    --step-5: clamp(1.5259rem, -0.2597rem + 8.7638vw, 6.3131rem);
+    --step--2: clamp(0.5208rem, -0.1055rem + 3.074vw, 2.2rem);
+    --step--1: clamp(0.625rem, -0.1676rem + 3.8902vw, 2.75rem);
+    --step-0: clamp(0.75rem, -0.2524rem + 4.9199vw, 3.4375rem);
+    --step-1: clamp(0.9rem, -0.367rem + 6.2185vw, 4.2969rem);
+    --step-2: clamp(1.08rem, -0.5206rem + 7.8555vw, 5.3711rem);
+    --step-3: clamp(1.296rem, -0.7249rem + 9.9183vw, 6.7139rem);
+    --step-4: clamp(1.5552rem, -0.995rem + 12.5165vw, 8.3923rem);
+    --step-5: clamp(1.8662rem, -1.3506rem + 15.788vw, 10.4904rem);
   }
 
   :root {
-    --margin-left: 11rem;
-    --fluid: clamp(4.375rem, 1.9039rem + 12.1281vw, 11rem);
   }
 }
