@@ -1,41 +1,38 @@
 ---
 import "../styles/global.css";
 ---
-<article>
-	<img class="billedet-1" src="/pige.webp" alt="">
-	<div class="tekst">
-		<h1>Astrid Lindholm</h1>
-		<h1 class="m1">Multimediedesign </h1>
-		<h1 class="m2"> studerende</h2>
+<article >
+	<div class="baggrund">
+		<h3>Om mig</h3>
+   		<p> Mit navn er Astrid, og jeg går til dagligt på tredje semester på multimediedesignuddannelsen på Københavns Erhvervsakademi (KEA), hvor jeg netop har påbegyndt mit valgfag Frontend. Dette fag har jeg taget, for at videreudvikle mine kompetencer inden for i særdeleshed Javascript, HTML og CSS med det formål at styrke mine evner for hjemmesideopbygning. Jeg har en særlig interesse for brugeroptimering og brugervenlighedsløsninger. Jeg har erfaring med at udarbejde projekter i grupper og på egen hånd, og kan se fordele og ulemper ved begge - jeg ser en stor fordel i at sparre med andre under udarbejdelsen af et produkt til gavn for flere målgrupper, men samtidig ser jeg også en stor fordel i muligheden for at fordybe sig i detaljerne, der er forbundet med dét at sidde for sig selv og nørde et emne. Jeg er meget detaljeorienteret og sætter stor pris på at aflevere et produkt, som jeg kan være stolt af, og som lever op til egne og andres forventninger. Dette er kun muligt, fordi jeg siden gymnasietiden har tillært mig selv at prioritere min tid, således at alle arbejder og egne interesser bliver nået til tiden og skaber rum til lidt spontanitet i hverdagen. Jeg bruger en stor del af min fritid på at bruge byen og de kulturseværdigheder, der omgiver mig. Jeg har stor interesse for historie, og nyder at fordybe mig på museer og lignende. Derudover bruger jeg hver vinter på orienteringsløb i skoven, som jeg har gjort i snart seks år. Jeg har qva mit frivillige arbejde stor erfaring med at kommunikere viden ud til forskellige segmenter, og nyder stor glæde af den praktiske erfaring jeg får herfra. Derudover har mit frivillige arbejde givet mig værktøjer inden for problemløsning, fordi jeg er blevet givet et ansvar for at udføre en række arbejdsopgaver, der til tider kræver at man tænker kreativt - det viser sig oftest ved tidskoordinering kolleger mellem. Jeg er meget opmærksom på, at de projekter, jeg får lov at medvirke på, kræver at alle bidrager med de kompetencer, de hver især har, for at opnå det ønskede resultat, der i sidste ende er bevis på, at man har afleveret et godt stykke arbejde, der skaber værdi - for mit vedkommende i form af læring.</p>
 	</div>
-</article>
+    
+    </article>
 
 <style>
-	article {
-  background-color: var(--Primary-01);
-  display: grid;
-  grid-template-columns: 3fr 5fr;
-  padding: 2%;
+ article{
+display: grid;
+grid-template-columns: 1fr minmax(0, 1200px) 1fr;
 
-.billedet-1{
-  z-index: 1; 
-  width: 100%; 
-  text-align: center;
-}
+	.baggrund{
+	grid-column: 2;
+	background-image: url("/baggrund.webp");
+	background-size: cover;
+	background-position: center; 
+  	background-repeat: no-repeat;
 
-h1 {
-  color: var(--Primary-07);
-  font-size: var(--step-5);
-  padding-left: 3%;
-  z-index: 2; 
-}
+		p, h3{
+		max-inline-size: 60ch;
+        margin-inline: auto;
+		font-size: var(--step--2);
+		color: var( --Primary-06);
+		padding: 5%;
+		}
 
-.m1 {
-  margin-left: 15%;
-}
-
-.m2 {
-  margin-left: 5%;
-}
+		h3{
+		font-style: var(--step-1);
+		color: var( --Primary-06);
+		}
 	}
+}
 </style>

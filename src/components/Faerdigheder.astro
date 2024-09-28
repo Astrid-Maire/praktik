@@ -1,6 +1,79 @@
 ---
 import "../styles/global.css";
+
+function showText(textId) {
+    // Skjul alle skjulte tekster
+    document.querySelectorAll('.hidden-text').forEach(text => {
+        text.classList.remove('show');
+    });
+    // Vis den valgte tekst
+    document.getElementById(textId).classList.add('show');
+}
 ---
 <article>
-    <h1>nn</h1>
+    <div class="vertical-line">
+        <button class="line-button" onclick="showText('text1')">HTML</button>
+        <button class="line-button" onclick="showText('text2')">CSS</button>
+        <button class="line-button" onclick="showText('text3')">JavaScript</button>
+        <button class="line-button" onclick="showText('text4')">PHP</button>
+        <button class="line-button" onclick="showText('text5')">Python</button>
+        <button class="line-button" onclick="showText('text6')">Java</button>
+        <button class="line-button" onclick="showText('text7')">C#</button>
+        <button class="line-button" onclick="showText('text8')">Ruby</button>
+    </div>
+
+    <div id="text1" class="hidden-text">Dette er tekst til knap 1</div>
+    <div id="text2" class="hidden-text">Dette er tekst til knap 2</div>
+    <div id="text3" class="hidden-text">Dette er tekst til knap 3</div>
+    <div id="text4" class="hidden-text">Dette er tekst til knap 4</div>
+    <div id="text5" class="hidden-text">Dette er tekst til knap 5</div>
+    <div id="text6" class="hidden-text">Dette er tekst til knap 6</div>
+    <div id="text7" class="hidden-text">Dette er tekst til knap 7</div>
+    <div id="text8" class="hidden-text">Dette er tekst til knap 8</div>
 </article>
+
+<style>
+    article {
+        background-color: var(--Primary-01);
+        display: grid;
+        grid-template-columns: 1fr minmax(0, 800px) 1fr;
+        padding: 20px;
+    }
+
+    .vertical-line {
+        height: 900px;
+        border-left: 4px solid var(--Primary-07);
+        grid-column: 2;
+        justify-self: center; 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .line-button {
+        background-color: var(--Primary-07);
+        color: var(--Primary-01);
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 30px;
+        margin: 10px 0; /* Afstand mellem knapperne */
+        transition: background-color 0.3s;
+    }
+
+    .line-button:hover {
+        background-color: var(--Primary-06);
+    }
+
+    .hidden-text {
+        grid-column: 2;
+        margin-top: 20px;
+        display: none; /* Start med at skjule teksten */
+        color: var(--Primary-08);
+    }
+
+    .show {
+        display: block; /* Vis teksten, når den får klassen "show" */
+    }
+</style>

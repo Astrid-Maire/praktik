@@ -9,30 +9,29 @@
     font-family: Georgia, sans-serif;
   }
 
-  h1,
-  h2 {
+  h1 {
     font-family: "Romanesco", sans-serif;
   }
 
   :root {
-    --Primary-01: rgba(242, 234, 213, 1);
-    --Primary-02: rgba(242, 209, 147, 1);
-    --Primary-03: rgba(216, 181, 138, 1);
+    --Primary-01: rgb(250, 240, 220);
+    --Primary-02: rgba(240, 240, 213, 1);
     --Primary-04: rgba(191, 163, 147, 1);
     --Primary-05: rgba(165, 120, 104, 1);
     --Primary-06: rgba(24, 24, 24, 1);
     --Primary-07: rgba(54, 132, 45, 1);
+    --Primary-08: rgba(70, 132, 45, 1);
   }
 
   :root {
-    --step--2: clamp(0.5208rem, -0.1055rem + 3.074vw, 2.2rem);
-    --step--1: clamp(0.625rem, -0.1676rem + 3.8902vw, 2.75rem);
-    --step-0: clamp(0.75rem, -0.2524rem + 4.9199vw, 3.4375rem);
-    --step-1: clamp(0.9rem, -0.367rem + 6.2185vw, 4.2969rem);
-    --step-2: clamp(1.08rem, -0.5206rem + 7.8555vw, 5.3711rem);
-    --step-3: clamp(1.296rem, -0.7249rem + 9.9183vw, 6.7139rem);
-    --step-4: clamp(1.5552rem, -0.995rem + 12.5165vw, 8.3923rem);
-    --step-5: clamp(1.8662rem, -1.3506rem + 15.788vw, 10.4904rem);
+    --step--2: clamp(0.5208rem, 0.0437rem + 2.3417vw, 1.8rem);
+    --step--1: clamp(0.625rem, 0.0189rem + 2.9748vw, 2.25rem);
+    --step-0: clamp(0.75rem, -0.0193rem + 3.7757vw, 2.8125rem);
+    --step-1: clamp(0.9rem, -0.0756rem + 4.7883vw, 3.5156rem);
+    --step-2: clamp(1.08rem, -0.1563rem + 6.0678vw, 4.3945rem);
+    --step-3: clamp(1.296rem, -0.2695rem + 7.6836vw, 5.4932rem);
+    --step-4: clamp(1.5552rem, -0.4259rem + 9.7231vw, 6.8665rem);
+    --step-5: clamp(1.8662rem, -0.6391rem + 12.2963vw, 8.5831rem);
   }
 
   :root {

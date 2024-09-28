@@ -1,20 +1,16 @@
 ---
 import "../styles/global.css";
-import Faerdigheder from "../components/Faerdigheder.astro";
-import TidligereOpgave from "../components/TidligereOpgave.astro";
-import Forside from "../components/Forside.astro";
-import OmMig from "../components/OmMig.astro";
-import Layout from "../layouts/Layout.astro";
-
 ---
-<Layout>
-  <Forside/>
-  <OmMig/>
-  <Faerdigheder />
-<TidligereOpgave/>
-</Layout>
+<article>
+    <img class="billedet" src="/pige-1.webp" alt="">
+    <div class="tekst">
+      <h1>Astrid Lindholm</h1>
+      <h1 class="m1">Multimediedesign </h1>
+      <h1 class="m2"> studerende</h1> 
+    </div>
+ </article>
 
-<style>
+ <style>
 	article {
   background-color: var(--Primary-01);
   display: grid;
@@ -42,5 +38,4 @@ h1 {
   margin-left: 5%;
 }
 }
-
 </style>
