@@ -1,36 +1,56 @@
 ---
 import "../styles/global.css";
 
-function showText(textId) {
-    // Skjul alle skjulte tekster
-    document.querySelectorAll('.hidden-text').forEach(text => {
-        text.classList.remove('show');
-    });
-    // Vis den valgte tekst
-    document.getElementById(textId).classList.add('show');
-}
+import { initializeToggle } from '../data/card.js';
+
+export const hydrate = "client:load";
+
+const cards = [
+    { title: 'HTML', body: 'Jeg anvender HTML til at skabe den strukturelle ramme for mine websider. Dette markup-sprog gør det muligt for mig at definere indholdets opbygning, herunder tekst, billeder og links, hvilket er essentielt for at formidle information effektivt.' },
+    { title: 'CSS', body: 'CSS anvender jeg til at styre det visuelle udtryk af mine webprojekter. Ved at definere stilarter for farver, skrifttyper og layout kan jeg skabe en æstetisk sammenhæng, der forbedrer brugeroplevelsen og understøtter den overordnede branding.' },
+    { title: 'JavaScript', body: 'JavaScript benytter jeg til at implementere interaktive funktioner og dynamisk indhold på mine websider. Dette programmeringssprog gør det muligt at reagere på brugerhandlinger i realtid, hvilket skaber en mere engagerende og responsiv oplevelse for brugerne.' },
+	{ title: 'Adobe-pakke', body: 'Jeg har stor ekspertise i Adobe-pakken, hvilket gør mig i stand til at anvende de avancerede funktioner i værktøjerne Photoshop, Illustrator og InDesign til at skabe visuelt imponerende og professionelt designet indhold. I Photoshop excellerer jeg i billedredigering og manipulation, mens jeg med Illustrator kan udvikle detaljerede grafikker og vektorelementer. Jeg bruger InDesign til at designe layouts til både trykte og digitale publikationer, hvilket sikrer, at mit arbejde er både æstetisk tiltalende og funktionelt. Denne alsidighed i Adobe-pakken giver mig mulighed for at levere kreative løsninger, der imødekommer komplekse designbehov.' },
+	{ title: 'Sciale medier', body: 'Som en del af min uddannelse som multimediedesigner arbejder vi med content creation til sociale medier. Dette inkluderer at udvikle engagerende og visuelt tiltalende indhold, der kan fange opmærksomheden hos forskellige målgrupper. Jeg lærer at anvende værktøjer som Adobe-pakken til at skabe grafik, videoklip og andre digitale medier, der understøtter strategier for social mediemarkedsføring. Denne erfaring hjælper mig med at forstå, hvordan man effektivt kommunikerer budskaber og opbygger et stærkt brand online.' },
+	{ title: 'SEO', body: 'Som en del af min uddannelse som multimediedesigner arbejder vi også med søgemaskineoptimering (SEO). Dette indebærer at udvikle strategier for at forbedre synligheden af indhold på sociale medier og hjemmesider. Jeg lærer at optimere tekster, billeder og metadata for at tiltrække mere trafik og engagement. Ved at kombinere SEO-principper med kreativt indhold kan jeg sikre, at vores projekter ikke kun er visuelt tiltalende, men også effektivt når ud til målgrupperne online. Denne viden er afgørende for at maksimere effekten af det indhold, vi skaber.' },
+	{ title: 'Testning af produkter', body:'I forbindelse med min uddannelse som multimediedesigner arbejder vi med testning af produkter på hjemmesider. Dette omfatter både funktionel testning for at sikre, at alle elementer fungerer korrekt, og brugertests for at vurdere den overordnede brugeroplevelse. Jeg lærer at identificere og analysere potentielle problemer, som brugerne måtte opleve, samt at indsamle feedback for at forbedre design og funktionalitet. Gennem systematisk testning kan jeg sikre, at de produkter, vi præsenterer, er intuitive og effektive, hvilket i sidste ende fører til en bedre brugeroplevelse og større kundetilfredshed.'},
+	{ title: 'UX Design', body:'Som en del af min uddannelse som multimediedesigner fokuserer jeg på UX Design. Jeg lærer at skabe brugervenlige digitale oplevelser ved at forstå brugeradfærd, lave wireframes og prototyper samt udføre brugertests. Ved at anvende UX-principper stræber jeg efter at udvikle intuitive løsninger, der sikrer en positiv oplevelse for brugerne, når de interagerer med digitale produkter og tjenester.'},
+	{ title: 'UI Design', body:'om en del af min uddannelse som multimediedesigner arbejder jeg med UI Design. Jeg fokuserer på at skabe æstetisk tiltalende og funktionelle brugergrænseflader, der gør det nemt for brugerne at navigere og interagere med digitale produkter. Dette indebærer at udvikle visuelle elementer, såsom knapper, ikoner og layout, samtidig med at jeg sikrer, at designet er konsistent og brugervenligt. Mit mål er at kombinere funktionalitet med et engagerende visuelt udtryk, så brugerne får en problemfri oplevelse.'},
+	{ title: 'CMS og databaser', body:'Som en del af min uddannelse som multimediedesigner arbejder jeg med CMS og databaser. Jeg lærer at opbygge og administrere websites med fokus på databaser, hvilket inkluderer at forstå databasemodellering, strukturer og forespørgsler. Jeg får indsigt i, hvordan data gemmes, opdateres og hentes effektivt, samt hvordan jeg kan optimere databaser for ydeevne og skalerbarhed. Desuden lærer jeg at integrere databaser med webapplikationer for at skabe dynamiske og interaktive brugeroplevelser, hvilket er afgørende for at levere relevante og engagerende indhold til brugerne.'},
+];
 ---
 <article>
     <div class="vertical-line">
-        <button class="line-button" onclick="showText('text1')">HTML</button>
-        <button class="line-button" onclick="showText('text2')">CSS</button>
-        <button class="line-button" onclick="showText('text3')">JavaScript</button>
-        <button class="line-button" onclick="showText('text4')">PHP</button>
-        <button class="line-button" onclick="showText('text5')">Python</button>
-        <button class="line-button" onclick="showText('text6')">Java</button>
-        <button class="line-button" onclick="showText('text7')">C#</button>
-        <button class="line-button" onclick="showText('text8')">Ruby</button>
+        {cards.map((card, index) => (
+            <div key={index} class={index % 2 === 0 ? 'left-side' : 'right-side'} style={{ top: `${index * 100}px` }}>
+                <button class="line-button" id={`toggleButton-${index}`}>{card.title}</button>
+                <p class="hidden-text" id={`text-${index}`}>{card.body}</p>
+            </div>
+        ))}
     </div>
-
-    <div id="text1" class="hidden-text">Dette er tekst til knap 1</div>
-    <div id="text2" class="hidden-text">Dette er tekst til knap 2</div>
-    <div id="text3" class="hidden-text">Dette er tekst til knap 3</div>
-    <div id="text4" class="hidden-text">Dette er tekst til knap 4</div>
-    <div id="text5" class="hidden-text">Dette er tekst til knap 5</div>
-    <div id="text6" class="hidden-text">Dette er tekst til knap 6</div>
-    <div id="text7" class="hidden-text">Dette er tekst til knap 7</div>
-    <div id="text8" class="hidden-text">Dette er tekst til knap 8</div>
 </article>
+
+<script type="module">
+    document.addEventListener('DOMContentLoaded', () => {
+        const buttons = document.querySelectorAll('.line-button');
+        const texts = document.querySelectorAll('.hidden-text');
+
+        buttons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                // Skjul alle tekstbokse
+                texts.forEach(text => {
+                    text.classList.remove('show');
+                    text.style.display = 'none'; 
+                });
+
+                texts[index].classList.toggle('show');
+
+                if (texts[index].classList.contains('show')) {
+                    texts[index].style.display = 'block'; 
+                }
+            });
+        });
+    });
+</script>
 
 <style>
     article {
@@ -38,42 +58,88 @@ function showText(textId) {
         display: grid;
         grid-template-columns: 1fr minmax(0, 800px) 1fr;
         padding: 20px;
+        position: relative;
     }
 
     .vertical-line {
-        height: 900px;
+        height: 950px;
         border-left: 4px solid var(--Primary-07);
         grid-column: 2;
-        justify-self: center; 
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
+        justify-self: center;
+        position: relative;
+        margin: 0 auto;
     }
 
     .line-button {
         background-color: var(--Primary-07);
-        color: var(--Primary-01);
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-        border-radius: 30px;
-        margin: 10px 0; /* Afstand mellem knapperne */
+        color: var(--Primary-01); 
+        border: none;   
+        padding: 10px 40px;
+        cursor: pointer;   
+        font-size: var(--step--3); 
+        border-radius: 30px;   
         transition: background-color 0.3s;
+        position: relative; 
+        white-space: nowrap; 
+        margin: 5px; 
+        z-index: 1; 
+    }
+
+    .left-side, .right-side {
+        position: absolute;
+    }
+
+    .left-side {
+        left: -0px; 
+    }
+
+    .right-side {
+        right: 0px; 
+    }
+
+    .left-side, .right-side {
+        top: calc(20px * var(--i)); 
     }
 
     .line-button:hover {
-        background-color: var(--Primary-06);
+        background-color: var(--Primary-08); 
     }
 
-    .hidden-text {
-        grid-column: 2;
-        margin-top: 20px;
-        display: none; /* Start med at skjule teksten */
-        color: var(--Primary-08);
+	.hidden-text {
+    color: var(--Primary-01);
+    display: none; 
+    background-color: var(--Primary-07);
+    border-radius: 30px; 
+    position: absolute; 
+    z-index: 2; 
+    left: 0; 
+    width: calc(100% + 400px); 
+    top: calc(100% + 1px);
+    padding: 7%;
+    transition: height 0.3s ease; 
+}
+
+    .hidden-text.show {
+        display: block; 
+        height: auto; 
     }
 
-    .show {
-        display: block; /* Vis teksten, når den får klassen "show" */
+    ul {
+        list-style: none;
+        overflow-x: auto;
+        display: flex;
+        gap: 0.5rem;
+        scroll-snap-type: x mandatory;
+    }
+
+    ul li {
+        flex-basis: clamp(2rem, 65%, 400px);
+        flex-shrink: 0;
+        padding: 0.5rem; 
+        background: var(--Primary-04);
+        border-radius: var(--card-border-radius);
+        color: var(--card-text-color);
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
     }
 </style>

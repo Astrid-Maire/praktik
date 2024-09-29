@@ -15,16 +15,16 @@
 
   :root {
     --Primary-01: rgb(250, 240, 220);
-    --Primary-02: rgba(240, 240, 213, 1);
-    --Primary-04: rgba(191, 163, 147, 1);
-    --Primary-05: rgba(165, 120, 104, 1);
+    --Primary-02: rgba(252, 220, 220, 1);
+    --Primary-03: rgb(254, 248, 248);
     --Primary-06: rgba(24, 24, 24, 1);
     --Primary-07: rgba(54, 132, 45, 1);
-    --Primary-08: rgba(70, 132, 45, 1);
+    --Primary-08: rgb(43, 108, 30);
   }
 
   :root {
-    --step--2: clamp(0.5208rem, 0.0437rem + 2.3417vw, 1.8rem);
+    --step--3: clamp(0.5208rem, 0.0437rem + 2.3417vw, 1.2rem);
+    --step--2: clamp(0.5208rem, 0.0437rem + 2.3417vw, 1.7rem);
     --step--1: clamp(0.625rem, 0.0189rem + 2.9748vw, 2.25rem);
     --step-0: clamp(0.75rem, -0.0193rem + 3.7757vw, 2.8125rem);
     --step-1: clamp(0.9rem, -0.0756rem + 4.7883vw, 3.5156rem);
@@ -35,5 +35,6 @@
   }
 
   :root {
+    --content-width: 70rem;
   }
 }
